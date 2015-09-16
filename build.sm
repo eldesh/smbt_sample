@@ -1,0 +1,21 @@
+
+target mlkit
+    sources
+        $(SML_LIB)/basis/basis.mlb
+        sample.sml
+    end
+
+    ffi
+        myexp2.c
+        myecho.c
+	    cflags -I${MLKIT_SRC}
+    end
+
+    option compiler = mlkit
+    option output   = myprog
+
+    post hooks
+        ./myprog
+    end
+end
+
